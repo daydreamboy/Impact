@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2964A6292E22FD00A5F922 /* libWCDebugKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2964A5292E22FD00A5F922 /* libWCDebugKit.a */; };
 		C91112592342986C00E72530 /* ImpactRuntimeException.h in Headers */ = {isa = PBXBuildFile; fileRef = C91112572342986C00E72530 /* ImpactRuntimeException.h */; };
 		C911125A2342986C00E72530 /* ImpactRuntimeException.mm in Sources */ = {isa = PBXBuildFile; fileRef = C91112582342986C00E72530 /* ImpactRuntimeException.mm */; };
 		C911125D2342E51700E72530 /* UncaughtNSException.m in Sources */ = {isa = PBXBuildFile; fileRef = C911125C2342E51700E72530 /* UncaughtNSException.m */; };
@@ -155,6 +156,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F2964A5292E22FD00A5F922 /* libWCDebugKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWCDebugKit.a; path = vendor_libraries/libWCDebugKit.a; sourceTree = "<group>"; };
 		C91112572342986C00E72530 /* ImpactRuntimeException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImpactRuntimeException.h; sourceTree = "<group>"; };
 		C91112582342986C00E72530 /* ImpactRuntimeException.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImpactRuntimeException.mm; sourceTree = "<group>"; };
 		C911125B2342E51700E72530 /* UncaughtNSException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtNSException.h; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98C6B2026A8923E000AF8B8 /* libc++abi.tbd in Frameworks */,
+				4F2964A6292E22FD00A5F922 /* libWCDebugKit.a in Frameworks */,
 				C9F58D4524A3D1A900255453 /* Impact.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +371,7 @@
 		C9A4137A2331007600059F5D = {
 			isa = PBXGroup;
 			children = (
+				4F2964A5292E22FD00A5F922 /* libWCDebugKit.a */,
 				C9A413862331007600059F5D /* Impact */,
 				C9A413912331007600059F5D /* ImpactTests */,
 				C9A413A4233103A500059F5D /* ImpactTestMac */,
@@ -855,7 +859,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ImpactTestiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
+				DEVELOPMENT_TEAM = U7337LU6F2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ImpactTestiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -863,7 +867,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vendor_libraries",
+				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"WCDebugKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stacksift.ImpactTestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -882,13 +894,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ImpactTestiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 77X93NZ3G2;
+				DEVELOPMENT_TEAM = U7337LU6F2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ImpactTestiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vendor_libraries",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"WCDebugKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.stacksift.ImpactTestiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

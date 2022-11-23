@@ -12,8 +12,8 @@ import Impact
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let backupPath = NSTemporaryDirectory() + "/impact"
-        let path = UserDefaults.standard.string(forKey: "output_path") ?? backupPath;
+        let backupPath = NSTemporaryDirectory().appendingFormat("/%f.txt", Date.init().timeIntervalSince1970);
+        let path = backupPath;
         let url = URL(fileURLWithPath: path, isDirectory: false)
 
         ImpactMonitor.shared.suppressReportCrash = UserDefaults.standard.bool(forKey: "suppressReportCrash")
